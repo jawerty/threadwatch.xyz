@@ -27,7 +27,9 @@ function run() {
             } else {
                 driver = await new Builder().forBrowser('firefox').build();
             }
+            console.log('okok')
             await driver.get(threadLink);
+            console.log('trytry')
         } catch (e) {
             console.log(e);
             process.exit(1);
