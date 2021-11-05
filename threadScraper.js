@@ -14,8 +14,13 @@ function run() {
 
     console.log("Thread Scraper running...");
     (async function scraper(retry) {
-        let driver = await new Builder().forBrowser('firefox').build();
-        await driver.get(threadLink);
+        try {
+            let driver = await new Builder().forBrowser('firefox').build();
+            await driver.get(threadLink);
+        } catch (e) {
+            console.log(e)
+            process.exit(1)
+        }
         driver.executeScript("document.body.style.zoom='67%'")
         const textToFind = threadShortId;
 
