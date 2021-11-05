@@ -33,6 +33,9 @@ function run() {
             console.log('trytry')
         } catch (e) {
             console.log("ok")
+            console.trace()
+
+            console.log(console.trace())
             console.log(e.stack, JSON.stringify(e))
             console.log(e);
             process.exit(1);
