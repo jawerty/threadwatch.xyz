@@ -12,6 +12,7 @@ function Thread() {
     const [commenters, setCommenters] = useState([]);
 
     const pruneTitle = (title) => {
+        if (!title) return "";
         if (title.length > 75) {
             const words = title.split(' ')
             let charCount = 0;
