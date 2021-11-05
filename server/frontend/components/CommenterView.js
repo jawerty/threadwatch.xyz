@@ -1,4 +1,4 @@
-import ReactionVoter from "./reactionVoter";
+import ReactionVoter from "./ReactionVoter";
 
 import "../styles/commenter-view.scss";
 
