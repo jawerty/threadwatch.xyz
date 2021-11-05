@@ -19,7 +19,7 @@ function Thread() {
             let newTitle = ""
             for (let word of words) {
                 charCount += word.length
-                if (charCount >= 75) {
+                if (charCount >= 100) {
                     newTitle += word + "..."
                     break;
                 } else {
