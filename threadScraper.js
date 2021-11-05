@@ -33,8 +33,8 @@ function run() {
             console.log('trytry')
         } catch (e) {
             console.log("ok")
-            console.error(e, e.message)
-            console.log(e, e.message);
+            console.log(e.stack, JSON.stringify(e))
+            console.log(e);
             process.exit(1);
         }
         driver.executeScript("document.body.style.zoom='67%'")
