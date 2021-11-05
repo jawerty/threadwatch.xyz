@@ -1,0 +1,89 @@
+.app {
+  h1 {
+    margin: 10px;
+  }
+}
+
+a {
+  text-decoration: none !important;
+  color: #f2502c !important;
+}
+
+.error-text {
+  color: red;
+}
+
+.flex {
+  display: flex;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.align-start {
+  align-items: start;
+}
+
+.align-end {
+  align-items: end;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-start {
+  justify-content: start;
+}
+
+.justify-end {
+  justify-content: end;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-row-reverse {
+  flex-direction: row-reverse;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.mt-1 {
+  margin-top: 10px;
+}
+
+.mt-2 {
+  margin-top: 20px;
+}
+
+.tw-btn {
+  font-size: 20px;
+  padding: 10px 30px;
+  border-radius: 10px;
+  width: auto;
+  &.primary {
+    background-color: #f2502c;
+    color: white;
+    border: 1px solid #f2502c;
+  }
+}
+
+.thread-card {
+  width: 600px;
+  img {
+    width: 100%;
+  }
+}

@@ -1,0 +1,13 @@
+.header {
+  padding: 10px 20px;
+  border-bottom: 1px solid #eee;
+  .header-actions {
+    a {
+      margin: 0px 10px;
+
+      &:last-child {
+        margin-right: 0px;
+      }
+    }
+  }
+}

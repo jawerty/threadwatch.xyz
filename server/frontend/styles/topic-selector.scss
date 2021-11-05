@@ -1,0 +1,18 @@
+.topic-selector {
+  .topic-bubble {
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    border: 2px solid rgb(27, 132, 181);
+    background-color: rgba(27, 132, 181, 0.2);
+    padding: 7px 10px;
+    border-radius: 20px;
+    color: rgb(27, 132, 181);
+    width: auto;
+    width: fit-content;
+    &.selected {
+      opacity: 0.5;
+    }
+  }
+}

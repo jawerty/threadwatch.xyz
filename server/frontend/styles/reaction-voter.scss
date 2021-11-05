@@ -1,0 +1,14 @@
+.reaction-voter {
+  cursor: pointer;
+  margin-top: 10px;
+  margin-right: 20px;
+  border: 2px solid rgb(27, 132, 181);
+  background-color: rgba(27, 132, 181, 0.2);
+  padding: 7px 10px;
+  border-radius: 20px;
+  color: rgb(27, 132, 181);
+  span {
+    margin-left: 5px;
+    font-weight: bold;
+  }
+}

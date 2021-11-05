@@ -1,0 +1,30 @@
+.front-page__content {
+  padding: 20px;
+}
+
+.front-page__intro-header {
+  background-color: #f0f0f0;
+  padding: 40px;
+
+  .front-page__intro-header__title {
+    width: 40%;
+
+    .title__text {
+      font-size: 50px;
+      margin-top: 0;
+    }
+    .title__subtitle-text {
+      font-size: 20px;
+      color: #aaa;
+    }
+  }
+
+  .front-page__intro-header__info {
+    width: 60%;
+
+    p {
+      color: rgb(50, 50, 50);
+      font-size: 20px;
+    }
+  }
+}

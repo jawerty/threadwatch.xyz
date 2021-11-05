@@ -1,0 +1,27 @@
+.thread-card-link {
+  width: 400px;
+  max-width: 400px;
+}
+
+.thread-card {
+  margin-right: 20px;
+  width: 400px;
+  border: 1px solid rgb(200, 200, 200);
+  border-radius: 5px;
+  display: inline-block; /* shrink wrap to image */
+  overflow: hidden;
+  .thread-card__screenshot {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    width: 100%;
+    transform: scale(1.6);
+    margin-top: 0px;
+  }
+  .thread-card__content {
+    margin-top: 55px;
+    padding: 20px;
+    h3 {
+      font-size: 18px;
+    }
+  }
+}
