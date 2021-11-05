@@ -46,7 +46,7 @@ function Thread() {
 
     useEffect(async () => {
         const commenters = [];
-        for (let commenterId of thread.commenters) {
+        for (let commenterId of thread?.commenters) {
             const rawResponse = await fetch(`/api/commenter/${commenterId}`, {
                 method: 'GET',
                 headers: {
