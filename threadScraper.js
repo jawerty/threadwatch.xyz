@@ -15,8 +15,9 @@ function run() {
 
     console.log("Thread Scraper running...");
     (async function scraper(retry) {
+        let driver;
         try {
-            let driver = await new Builder().forBrowser('firefox').build();
+            driver = await new Builder().forBrowser('firefox').build();
             console.log("okok")
             await driver.get(threadLink);
             console.log('trytry')
