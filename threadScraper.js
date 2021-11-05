@@ -15,10 +15,19 @@ function run() {
     console.log("Thread Scraper running...");
     (async function scraper(retry) {
         try {
-            let driver = await new Builder().forBrowser('firefox').build();
+            let driver;
+            if (process.env.ENV === "prod") {
+                const binary = new firefox.Binary();
+                binary.addArguments("--headless");
+                driver = new Builder()
+                    .forBrowser('firefox')
+                    .setFirefoxOptions(new firefox.Options().setBinary(binary))
+                    .build();
+            } else {
+                driver = await new Builder().forBrowser('firefox').build();
+            }
             await driver.get(threadLink);
         } catch (e) {
-            throw new Error(e);
             console.log(e);
             process.exit(1);
         }
