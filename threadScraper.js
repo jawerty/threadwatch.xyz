@@ -21,8 +21,8 @@ function run() {
                 const options = new firefox.Options().setBinary('/usr/bin/geckodriver')
                 options.addArguments("--headless");
                 driver = new Builder()
-                    .forBrowser('firefox')
                     .enableVerboseLogging()
+                    .forBrowser('firefox')
                     .setFirefoxOptions(options)
                     .build();
             } else {
