@@ -2,7 +2,7 @@ async function getTopics(req, res) {
     const models = req.app.get('models');
     const sort = req.query.sort;
 
-    const options = {}
+    const options = { limit: 15 }
     if (sort == "freq") {
         options['$sort'] = { count: -1 };
     }
