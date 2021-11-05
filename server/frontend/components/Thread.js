@@ -13,7 +13,7 @@ function Thread() {
 
     const pruneTitle = (title) => {
         if (!title) return "";
-        if (title.length > 75) {
+        if (title.length > 100) {
             const words = title.split(' ')
             let charCount = 0;
             let newTitle = ""
