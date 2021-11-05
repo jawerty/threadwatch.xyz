@@ -18,7 +18,7 @@ function run() {
         try {
             let driver;
             if (process.env.ENV === "prod") {
-                const options = new firefox.Options().setBinary(firefox.Channel.NIGHTLY)
+                const options = new firefox.Options().setBinary('/usr/bin/geckodriver')
                 options.addArguments("--headless");
                 driver = new Builder()
                     .forBrowser('firefox')
@@ -32,11 +32,6 @@ function run() {
             await driver.get(threadLink);
             console.log('trytry')
         } catch (e) {
-            console.log("ok")
-            console.trace()
-
-            console.log(console.trace())
-            console.log(e.stack, JSON.stringify(e))
             console.log(e);
             process.exit(1);
         }
