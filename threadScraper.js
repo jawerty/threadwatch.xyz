@@ -18,8 +18,9 @@ function run() {
             let driver = await new Builder().forBrowser('firefox').build();
             await driver.get(threadLink);
         } catch (e) {
-            console.log(e)
-            process.exit(1)
+            throw new Error(e);
+            console.log(e);
+            process.exit(1);
         }
         driver.executeScript("document.body.style.zoom='67%'")
         const textToFind = threadShortId;
