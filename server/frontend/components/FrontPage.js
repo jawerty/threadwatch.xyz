@@ -11,14 +11,14 @@ function FrontPage() {
 	const [showLinkForm, setShowLinkForm] = useState(false);
 
 	return <div className="front-page">
-		<div className="front-page__intro-header flex flex-row">
+		<div className="flex flex-row-2 front-page__intro-header">
 			<div className="front-page__intro-header__title flex align-center justify-center">
-				{!showLinkForm && <div className="flex flex-column">
+				{!showLinkForm && <div className="front-page__intro-header__inner flex flex-column">
 					<h1 className="title__text">threadwatch.xyz</h1>
 					<span className="title__subtitle-text">The Internet's Comment Watchdog</span>
 					<button className="tw-btn primary mt-2" onClick={(e) => setShowLinkForm(true)}>Get a threadwatch link</button>
 				</div>}
-				{showLinkForm && <div className="flex flex-column">
+				{showLinkForm && <div className="front-page__intro-header__inner flex flex-column">
 					<h2 className="title__text">threadwatch.xyz</h2>
 					<LinkGeneratorForm />
 				</div>}

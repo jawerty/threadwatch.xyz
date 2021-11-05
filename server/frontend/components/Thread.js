@@ -75,7 +75,7 @@ function Thread() {
     }, []);
 
     return <div className="thread flex flex-column">
-        <div className="flex flex-row">
+        <div className="thread__content flex flex-row">
             <div className="left flex flex-column">
                 <h1 className="thread__title">{pruneTitle(thread?.title)}</h1>
                 {thread?.screenShotCreated

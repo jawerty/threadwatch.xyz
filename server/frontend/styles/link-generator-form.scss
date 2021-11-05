@@ -1,6 +1,12 @@
+@import "utils";
+
 .hint-text {
   font-size: 12px;
   color: #aaa;
+
+  @include phone {
+    word-break: break-all;
+  }
 }
 
 .input-label {

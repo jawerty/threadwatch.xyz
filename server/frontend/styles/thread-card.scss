@@ -1,9 +1,12 @@
+@import "utils";
+
 .thread-card-link {
   width: 400px;
   max-width: 400px;
 }
 
 .thread-card {
+  margin-bottom: 10px;
   margin-right: 20px;
   width: 400px;
   border: 1px solid rgb(200, 200, 200);
@@ -17,11 +20,17 @@
     transform: scale(1.6);
     margin-top: 0px;
   }
+
   .thread-card__content {
     margin-top: 55px;
     padding: 20px;
     h3 {
       font-size: 18px;
     }
+  }
+
+  @include phone {
+    width: 100%;
+    margin: 0px;
   }
 }

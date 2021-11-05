@@ -1,3 +1,5 @@
+@import "utils";
+
 .front-page__content {
   padding: 20px;
 }
@@ -25,6 +27,36 @@
     p {
       color: rgb(50, 50, 50);
       font-size: 20px;
+    }
+  }
+
+  @include phone {
+    flex-direction: column !important;
+    padding: 20px;
+
+    .front-page__intro-header__inner {
+      width: 100%;
+    }
+
+    .front-page__intro-header__title {
+      width: 100%;
+      margin-bottom: 10px;
+
+      .title__text {
+        font-size: 32px;
+        margin: 0;
+        margin-bottom: 10px;
+      }
+    }
+
+    .front-page__intro-header__info {
+      width: 100%;
+      p {
+        color: rgb(50, 50, 50);
+        font-size: 14px;
+        margin-bottom: 5px;
+        padding: 0;
+      }
     }
   }
 }
