@@ -32,6 +32,8 @@ function run() {
             await driver.get(threadLink);
             console.log('trytry')
         } catch (e) {
+            console.log("ok")
+            console.error(e, e.message)
             console.log(e, e.message);
             process.exit(1);
         }
