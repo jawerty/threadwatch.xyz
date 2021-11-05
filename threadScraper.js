@@ -22,6 +22,7 @@ function run() {
                 options.addArguments("--headless");
                 driver = new Builder()
                     .forBrowser('firefox')
+                    .enableVerboseLogging()
                     .setFirefoxOptions(options)
                     .build();
             } else {
