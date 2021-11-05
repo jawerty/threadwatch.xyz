@@ -27,11 +27,11 @@ function run() {
             } else {
                 driver = await new Builder().forBrowser('firefox').build();
             }
-            console.log('okok')
+
             await driver.get(threadLink);
             console.log('trytry')
         } catch (e) {
-            console.log(e);
+            console.log(e, e.message);
             process.exit(1);
         }
         driver.executeScript("document.body.style.zoom='67%'")
