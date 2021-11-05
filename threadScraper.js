@@ -15,7 +15,8 @@ function run() {
 
     console.log("Thread Scraper running...");
     (async function scraper(retry) {
-        let driver;
+        await timeout(1000 * 20);
+	let driver;
         try {
             driver = await new Builder().forBrowser('firefox').build();
             console.log("okok")
