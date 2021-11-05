@@ -11,6 +11,25 @@ function Thread() {
     const [recentThreads, setRecentThreads] = useState([]);
     const [commenters, setCommenters] = useState([]);
 
+    const pruneTitle = (title) => {
+        if (title.length > 75) {
+            const words = title.split(' ')
+            let charCount = 0;
+            let newTitle = ""
+            for (let word of words) {
+                charCount += word.length
+                if (charCount >= 75) {
+                    newTitle += word + "..."
+                    break;
+                } else {
+                    newTitle += word + " "
+                }
+            }
+            return newTitle;
+        }
+        return title;
+    }
+
     useEffect(async () => {
         const rawResponse = await fetch(`/api/thread/${threadShortId}`, {
             method: 'GET',
@@ -57,7 +76,7 @@ function Thread() {
     return <div className="thread flex flex-column">
         <div className="flex flex-row">
             <div className="left flex flex-column">
-                <h1>{thread?.title}</h1>
+                <h1 className="thread__title">{pruneTitle(thread?.title)}</h1>
                 {thread?.screenShotCreated
                     && <img
                         className="thread__screenshot"

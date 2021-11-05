@@ -1,7 +1,12 @@
 .thread {
+  .thread__title {
+    font-size: 32px;
+  }
+
   .recent-threads {
     padding: 10px;
   }
+
   .thread__screenshot {
     width: 100%;
   }
