@@ -16,18 +16,7 @@ function run() {
     console.log("Thread Scraper running...");
     (async function scraper(retry) {
         try {
-            let driver;
-            if (process.env.ENV === "prod") {
-                const options = new firefox.Options().setBinary('/usr/bin/geckodriver')
-                options.addArguments("--headless");
-                driver = new Builder()
-                    .forBrowser('firefox')
-                    .setFirefoxOptions(options)
-                    .build();
-            } else {
-                driver = await new Builder().forBrowser('firefox').build();
-            }
-
+            let driver = await new Builder().forBrowser('firefox').build();
             console.log("okok")
             await driver.get(threadLink);
             console.log('trytry')
