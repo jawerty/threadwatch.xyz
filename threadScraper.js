@@ -1,6 +1,6 @@
 const fs = require('fs');
 const db = require("./server/db/db");
-const { Builder, By, Key, until } = require('selenium-webdriver');
+const { Builder, By, Key, until, firefox } = require('selenium-webdriver');
 
 function timeout(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
