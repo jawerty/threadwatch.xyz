@@ -18,11 +18,11 @@ function run() {
         try {
             let driver;
             if (process.env.ENV === "prod") {
-                const binary = new firefox.Binary();
-                binary.addArguments("--headless");
+                const options = new firefox.Options().setBinary(firefox.Channel.NIGHTLY)
+                options.addArguments("--headless");
                 driver = new Builder()
                     .forBrowser('firefox')
-                    .setFirefoxOptions(new firefox.Options().setBinary(binary))
+                    .setFirefoxOptions(options)
                     .build();
             } else {
                 driver = await new Builder().forBrowser('firefox').build();
