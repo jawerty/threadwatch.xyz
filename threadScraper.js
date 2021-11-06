@@ -193,7 +193,8 @@ function run() {
 
         try {
             if (retry) {
-                await timeout(4000);
+                const elBy = By.css("article[data-testid='tweet']");
+                await driver.wait(until.elementLocated(elBy, 100));
                 await driver.takeScreenshot().then(
                     function (image) {
                         fs.writeFile(`./server/public/screenshots/${threadShortId}.png`, image, 'base64', function (err) {
@@ -201,7 +202,6 @@ function run() {
                         });
                     }
                 );
-                const elBy = By.css("article[data-testid='tweet']");
                 const currentTweets = await driver.findElements(elBy);
                 const topCommenters = await findTopCommenters(currentTweets)
                 const commenterIds = []
