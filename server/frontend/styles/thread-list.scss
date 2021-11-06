@@ -1,5 +1,13 @@
 @import "utils";
 
+@import "utils";
 .thread-list {
   margin-top: 20px;
+  .thread-card {
+    margin-right: 20px;
+
+    @include phone {
+      margin-right: 0px;
+    }
+  }
 }
