@@ -43,7 +43,12 @@ async function threadLinkFinder() {
             } else {
                 // close process
                 retry = true;
-                processObject.process.kill('SIGINT');
+                console.log('killing process')
+                try {
+                    processObject.process.kill('SIGINT');
+                } catch (e) {
+                    console.log(e)
+                }
             }
         }
 
