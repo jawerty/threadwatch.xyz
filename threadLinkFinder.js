@@ -72,7 +72,7 @@ function run() {
 
     clearProcesses = async () => {
         Object.keys(processes).forEach((proc) => {
-            kill(proc.pid)
+            kill(proc.process.pid)
         });
     }
     process.on('exit', clearProcesses);
