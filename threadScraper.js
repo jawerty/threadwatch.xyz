@@ -171,7 +171,7 @@ function run() {
 
             if (!tweetWithText) {
                 console.log("text not found");
-                await driver.executeScript('window.scrollBy(0,2000)');
+                await driver.executeScript('window.scrollBy(0,3000)');
                 await timeout(2000);
                 await findTweetWithText();
             } else {

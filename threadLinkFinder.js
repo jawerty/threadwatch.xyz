@@ -31,7 +31,7 @@ async function threadLinkFinder() {
                 }]
         });
     for (let threadNotFound of threadsNotFound) {
-        console.log("Thread", threadNotFound);
+        console.log("trying thread", threadNotFound.threadShortId);
         let startProcess = true;
         let retry = false;
         if (threadNotFound.threadShortId in processes) {
@@ -47,8 +47,12 @@ async function threadLinkFinder() {
             }
         }
 
+
         if (startProcess) {
+            console.log("starting scraper")
             spawnScraper(threadNotFound, retry)
+        } else {
+            console.log("not starting scraper")
         }
     }
 }
