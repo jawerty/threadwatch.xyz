@@ -5,7 +5,7 @@ const models = db().init();
 const processes = {};
 
 function spawnScraper(thread, retry) {
-    const threadScraper = spawn('node', ["threadScraper.js", thread.postLink, thread.threadShortId, (retry) ? "--retry" : "", `| tee ./scraper-${thread.threadShortId}.log`]);
+    const threadScraper = spawn('node', ["threadScraper.js", thread.postLink, thread.threadShortId, (retry) ? "--retry" : "", '|', 'tee', `./scraper-${thread.threadShortId}.log`]);
 
     threadScraper.on('close', (code) => {
         delete processes[thread.threadShortId];
