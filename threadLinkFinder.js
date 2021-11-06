@@ -12,6 +12,7 @@ function spawnScraper(thread, retry) {
     threadScraper.stdout.pipe(writeStream);
 
     threadScraper.on('close', (code) => {
+        kill(threadScraper.pid)
         delete processes[thread.threadShortId];
         console.log(`threadScraper for ${thread.threadShortId} exited with code ${code}`);
     });
