@@ -1,11 +1,14 @@
 const { spawn } = require('child_process');
+const fs = require('fs');
 const db = require("./server/db/db");
 const models = db().init();
 
 const processes = {};
 
 function spawnScraper(thread, retry) {
-    const threadScraper = spawn('node', ["threadScraper.js", thread.postLink, thread.threadShortId, (retry) ? "--retry" : "", '|', 'tee', `./scraper-${thread.threadShortId}.log`]);
+    const threadScraper = spawn('node', ["threadScraper.js", thread.postLink, thread.threadShortId, (retry) ? "--retry" : ""]);
+    const writeStream = fs.createWriteStream(`./scraper-${thread.threadShortId}.log`);
+    threadScraper.stdout.pipe(writeStream);
 
     threadScraper.on('close', (code) => {
         delete processes[thread.threadShortId];
