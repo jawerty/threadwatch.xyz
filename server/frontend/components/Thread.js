@@ -98,7 +98,7 @@ function Thread() {
         <div className="recent-threads flex flex-column">
             <h2>Recent</h2>
             <div className="recent-threads__content flex">
-                {recentThreads && recentThreads.map(() => {
+                {recentThreads && recentThreads.map((thread) => {
                     return <ThreadCard thread={thread} />
                 })}
             </div>
