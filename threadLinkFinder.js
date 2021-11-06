@@ -60,7 +60,7 @@ function run() {
     console.log("Thread link finder running")
 
     threadLinkFinder();
-    setTimeout(threadLinkFinder, 10000);
+    setInterval(threadLinkFinder, 10000);
 }
 
 run()
