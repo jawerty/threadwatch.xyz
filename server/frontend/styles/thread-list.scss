@@ -2,6 +2,9 @@
 
 .thread-list {
   margin-top: 20px;
+  @include phone {
+    flex-direction: column;
+  }
   .thread-card {
     margin-right: 20px;
 
