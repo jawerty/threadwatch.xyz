@@ -8,6 +8,7 @@ function ThreadList({ topicFilter, recent = false }) {
     const [threads, setThreads] = useState([]);
 
     useEffect(async () => {
+        console.log(topicFilter);
         let topicFilterQuery = "";
         let recentQuery = "";
         if (topicFilter !== true) {
@@ -25,6 +26,7 @@ function ThreadList({ topicFilter, recent = false }) {
             }
         });
         const content = await rawResponse.json();
+        console.log("new threads", content.threads)
         setThreads(content.threads)
     }, [topicFilter]);
 
