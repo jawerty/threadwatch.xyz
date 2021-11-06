@@ -3,6 +3,9 @@
 .thread-card-link {
   width: 400px;
   max-width: 400px;
+  @include phone {
+    width: 100%;
+  }
 }
 
 .thread-card {
