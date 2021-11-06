@@ -16,9 +16,15 @@ function run() {
     console.log("Thread Scraper running...");
     (async function scraper(retry) {
         await timeout(1000 * 20);
-	let driver;
+        let driver;
         try {
-            driver = await new Builder().forBrowser('firefox').build();
+            const options = new firefox.Options()
+            options.addArguments("--headless");
+
+            driver = new Builder()
+                .forBrowser('firefox')
+                .setFirefoxOptions(options)
+                .build();
             console.log("okok")
             await driver.get(threadLink);
             console.log('trytry')

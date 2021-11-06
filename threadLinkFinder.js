@@ -41,7 +41,7 @@ async function threadLinkFinder() {
         let retry = false;
         if (threadNotFound.threadShortId in processes) {
             const processObject = processes[threadNotFound.threadShortId];
-            const timeTillExpired = 1000 * 60 * 10; // ten minutes
+            const timeTillExpired = 1000 * 60 * 5; // ten minutes
             const isExpired = ((new Date().getTime() - processObject.timeStarted.getTime()) > timeTillExpired);
             if (!isExpired) {
                 startProcess = false;
