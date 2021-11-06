@@ -16,6 +16,9 @@
     padding: 20px;
 
     .recent-threads__content {
+      .thread-card-link {
+        margin-right: 10px;
+      }
       @include phone {
         flex-direction: column;
         .thread-card-link {
