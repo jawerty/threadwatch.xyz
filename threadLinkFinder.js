@@ -1,3 +1,4 @@
+const kill = require('tree-kill');
 const { spawn } = require('child_process');
 const fs = require('fs');
 const db = require("./server/db/db");
@@ -45,7 +46,7 @@ async function threadLinkFinder() {
                 retry = true;
                 console.log('killing process')
                 try {
-                    processObject.process.kill('SIGINT');
+                    kill(processObject.process.pid);
                 } catch (e) {
                     console.log(e)
                 }
