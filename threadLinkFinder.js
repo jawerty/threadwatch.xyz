@@ -38,7 +38,7 @@ async function threadLinkFinder() {
         let retry = false;
         if (threadNotFound.threadShortId in processes) {
             const processObject = processes[threadNotFound.threadShortId];
-            const timeTillExpired = 1000 * 60 * 1; // ten minutes
+            const timeTillExpired = 1000 * 60 * 5; // ten minutes
             const isExpired = ((new Date().getTime() - processObject.timeStarted.getTime()) > timeTillExpired);
             if (!isExpired) {
                 startProcess = false;
@@ -68,6 +68,19 @@ function run() {
 
     threadLinkFinder();
     setInterval(threadLinkFinder, 10000);
+
+
+    clearProcesses = async () => {
+        Object.keys(processes).forEach((proc) => {
+            kill(proc.pid)
+        });
+    }
+    process.on('exit', clearProcesses);
+    process.on('SIGUSR1', clearProcesses);
+    process.on('SIGUSR2', clearProcesses);
+    process.on('SIGINT', clearProcesses);
+    process.on('uncaughtException', clearProcesses);
+
 }
 
 run()
