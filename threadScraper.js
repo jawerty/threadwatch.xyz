@@ -25,6 +25,16 @@ function run() {
                 .forBrowser('firefox')
                 .setFirefoxOptions(options)
                 .build();
+
+            const quitDriver = async () => {
+                await driver.quit()
+            }
+            process.on('exit', quitDriver);
+            process.on('SIGUSR1', quitDriver);
+            process.on('SIGUSR2', quitDriver);
+            process.on('SIGINT', quitDriver);
+            process.on('uncaughtException', quitDriver);
+
             console.log("okok")
             await driver.get(threadLink);
             console.log('trytry')
@@ -183,7 +193,7 @@ function run() {
 
         try {
             if (retry) {
-                await timeout(2000);
+                await timeout(4000);
                 await driver.takeScreenshot().then(
                     function (image) {
                         fs.writeFile(`./server/public/screenshots/${threadShortId}.png`, image, 'base64', function (err) {
@@ -191,6 +201,17 @@ function run() {
                         });
                     }
                 );
+                const elBy = By.css("article[data-testid='tweet']");
+                const currentTweets = await driver.findElements(elBy);
+                const topCommenters = await findTopCommenters(currentTweets)
+                const commenterIds = []
+                for (let commenter of topCommenters) {
+                    const newComment = new models["Commenter"](commenter)
+                    newComment.save();
+                    commenterIds.push(newComment._id);
+                }
+                await models["Thread"].findOneAndUpdate({ threadShortId }, { screenShotCreated: true, commenters: commenterIds });
+                console.log("SAVED SCREENSHOT AND UDPATED DB")
                 await driver.quit();
                 process.exit(1);
             }
