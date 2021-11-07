@@ -43,7 +43,7 @@ function LinkGeneratorForm() {
 
     return <div className="link-generator-form flex">
         {!threadLink && <div className="flex flex-column">
-            <label className="input-label">Enter your post link</label>
+            <label className="input-label">Enter your post link <span className="error-text">(only works for Twitter currently)</span></label>
             <span className="hint-text">* example: https://twitter.com/TimeOutLondon/status/1455873444109852680</span>
             <span className="hint-text">* post within a MINUTE of when you generate the link</span>
             <input
