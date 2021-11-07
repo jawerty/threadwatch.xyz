@@ -20,11 +20,11 @@ function getThreadPageInfo(postLink) {
 				const topics = doc.entities().out();
 				resolve({ topics, title })
 			})
-		})
+		});
 
 		req.on('error', error => {
 			reject({});
-		})
+		});
 
 		req.end()
 	});
@@ -45,7 +45,7 @@ async function getThreads(req, res) {
 		options['$sort'] = { createdTs: -1 }
 	}
 	if (topicFilter) {
-		findQuery["topic"] = topicFilter;
+		findQuery["topics"] = topicFilter;
 	}
 
 	const threads = await models['Thread'].find(findQuery, null, options);

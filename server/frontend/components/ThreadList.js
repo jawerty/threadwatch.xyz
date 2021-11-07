@@ -30,7 +30,7 @@ function ThreadList({ topicFilter, recent = false }) {
         setThreads(content.threads)
     }, [topicFilter]);
 
-    return <div className="thread-list flex">
+    return <div className="thread-list flex flex-wrap">
         {threads && threads.map((thread) => {
             return <ThreadCard thread={thread} />;
         })}
