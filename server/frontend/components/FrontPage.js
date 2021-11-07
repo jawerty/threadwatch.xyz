@@ -25,10 +25,10 @@ function FrontPage() {
 			</div>
 			<div className="front-page__intro-header__info flex flex-column align-center justify-center">
 				<div className="flex flex-column">
-					<p>1) Get into an argument on the Internet</p>
+					<p>1) Find a fiery discussion on the Internet</p>
 					<p>2) Grab a threadwatch.xyz link</p>
 					<p>3) Post the link in the thread (under the comment you want to highlight)</p>
-					<p>4) See what happens!</p>
+					<p>4) Threadwatch will track the thread on threadwatch.xyz!</p>
 				</div>
 			</div>
 		</div>
