@@ -115,12 +115,7 @@ function run() {
             const elBy = By.css("article[data-testid='tweet']");
             console.log("start");
             await driver.wait(until.elementLocated(elBy, 100));
-            console.log("Located")
             const currentTweets = await driver.findElements(elBy);
-            // console.log(currentTweets);
-            // await driver.wait(until.elementIsVisible(elements, 100));
-            // const currentTweets = await driver.findElements()
-            // find text
 
             console.log("Total tweets", currentTweets.length)
             for (let tweet of currentTweets) {
@@ -195,10 +190,13 @@ function run() {
             if (retry) {
                 const elBy = By.css("article[data-testid='tweet']");
                 await driver.wait(until.elementLocated(elBy, 100));
+                await timeout(2000); // buffer time for images to load
                 await driver.takeScreenshot().then(
                     function (image) {
                         fs.writeFile(`./server/public/screenshots/${threadShortId}.png`, image, 'base64', function (err) {
-                            console.log(err);
+                            if (err) {
+                                console.log(err);
+                            }
                         });
                     }
                 );
@@ -230,7 +228,9 @@ function run() {
             await driver.takeScreenshot().then(
                 function (image) {
                     fs.writeFile(`./server/public/screenshots/${threadShortId}.png`, image, 'base64', function (err) {
-                        console.log(err);
+                        if (err) {
+                            console.log(err);
+                        }
                     });
                 }
             );

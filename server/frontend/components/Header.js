@@ -12,11 +12,11 @@ function Header() {
                 threadwatch.xyz
             </span>
         </Link>
-        <div className="header-actions">
+        {/* <div className="header-actions">
             <a href="#" onClick={(e) => { setModal("login") }}>
                 What is this?
             </a>
-        </div>
+        </div> */}
     </div>
 }
 
