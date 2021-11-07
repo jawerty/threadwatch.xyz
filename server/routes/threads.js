@@ -36,7 +36,7 @@ async function getThreads(req, res) {
 	const recentFilter = req.query.recent;
 	const topicFilter = req.query.topicFilter;
 	const findQuery = {};
-	const options = {};
+	const options = { limit: 25 };
 
 	if (foundFilter == "true") {
 		findQuery["screenShotCreated"] = true;
