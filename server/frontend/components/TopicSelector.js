@@ -26,8 +26,8 @@ function TopicSelector({ selectedTopicFilter, topicSelectorHandler }) {
         </div>
         {topics && topics.map((topic) => {
             return <div
-                onClick={(e) => topicSelectorHandler(topic)}
-                className={`topic-bubble${selectedTopicFilter === topic ? " selected" : ""}`}>
+                onClick={(e) => topicSelectorHandler(topic.name)}
+                className={`topic-bubble${selectedTopicFilter === topic.name ? " selected" : ""}`}>
                 {topic.name}
             </div>
         })}
